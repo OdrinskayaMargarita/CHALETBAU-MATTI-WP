@@ -1,0 +1,48 @@
+.center-quote{
+    padding-top: 150px;
+    padding-bottom: 120px;
+    @media(max-width: $w-mobile-up + 1){
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+    &__cont{
+        @media(max-width: $w-mobile-up + 1){
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    &__container{
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        @include tablet {
+          
+        }
+        
+        @include mobile {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+    }
+    &__author{
+        display: block;
+        margin-top: 40px;
+        font-family: $f-eaves-sans;
+        font-size: 18px;
+        line-height: (20/18);
+        letter-spacing: (2/18)+em;
+        color: $c-dark;
+        text-align: center;
+        text-transform: uppercase;
+        @media(max-width: $w-mobile-up + 1){
+            margin-top: 30px;
+        }
+    }
+    &__blockquote{
+        &::before{
+            left: 0;
+        }
+    }  
+}

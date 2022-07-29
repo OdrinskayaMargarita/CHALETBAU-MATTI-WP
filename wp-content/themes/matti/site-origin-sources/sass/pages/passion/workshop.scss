@@ -1,0 +1,273 @@
+.workshop {
+  @extend %section-dark;
+
+  position: relative;
+  z-index: 1;
+
+  margin: 100px 0 120px;
+  padding-top: 200px;
+
+  @include tablet {
+    margin: 40px 0;
+    padding-top: 80px;
+  }
+  
+  @include mobile {
+    overflow: hidden;
+    padding-top: 140px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 115px;
+    background-color: $c-milk;
+    z-index: -1;
+
+    @include tablet {
+      height: 90px;
+    }
+    
+    @include mobile {
+      height: 90px;
+      background-color: $c-white;
+    }
+  }
+
+  &__fakebg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 115px;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+
+    @include tablet {
+      bottom: 90px;
+    }
+  }
+
+  &__cont {
+  }
+
+  &__precision {
+    padding-bottom: 140px;
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+    
+    @include mobile {
+      padding-bottom: 90px;
+    }
+  }
+
+  &__precision-grid {
+  }
+
+  &__figure {
+    @include col(10);
+
+    @include tablet {
+      @include col(11);
+    }
+    
+    @include mobile {
+      
+    }
+
+    &--l {
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        @include col(15);
+
+        margin-left: -15px;
+        padding-right: 0;
+
+        order: 2;
+      }
+
+    }
+    &--r {
+      
+      @include tablet {
+        @include offset(10);
+
+        margin-top: 30px;
+      }
+      
+      @include mobile {
+        display: none;
+      }
+    }
+    &--mob {
+      display: none;
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        @include col(24);
+        @include offset(0);
+
+        
+        display: block;
+        margin-top: 56px;
+        transform: translateX(52px);
+      }
+    }
+    &--narrow {
+      @include col(24);
+
+      margin-top: 70px;
+      width: 106%;
+      flex-shrink: 0;
+      max-width: unset;
+
+      transform: translateX(-30%);
+
+      @include tablet {
+        margin-top: 40px;
+        transform: translate(0, 0);
+      }
+      
+      @include mobile {
+        @include col(20);
+
+        margin-top: 56px;
+        transform: translate(0px);
+      }
+    }
+  }
+
+  &__content {
+    @include col(12);
+    @include offset(2);
+
+    @include tablet {
+      @include col(12);
+      @include offset(1);
+    }
+    
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+
+      margin-bottom: 56px;
+    }
+
+    &--l {
+      padding-top: 36px;
+
+      @include tablet {
+        @include col(14);
+        @include offset(0);
+
+        padding-top: 0;
+      }
+      
+      @include mobile {
+        @include col(24);
+        @include offset(0);
+
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__content-grid {
+
+  }
+
+  &__pretitle {
+    @extend %pretitle--grey;
+    @include col(12, 12);
+
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @extend %title;
+    @include col(12, 12);
+
+    margin-bottom: 30px;
+
+    br {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    &--offset {
+      @include col(7, 12);
+      @include offset(5, 12);
+
+      @include tablet {
+        @include col(12, 12);
+        @include offset(0, 12);
+      }
+      
+      @include mobile {
+        
+      }
+    }
+    &--l {
+      @include col(6, 12);
+      @include offset(2, 12);
+
+      padding-right: 0;
+
+      @include tablet {
+        @include col(12, 12);
+        @include offset(0, 12);
+      }
+      
+      @include mobile {
+        
+      }
+    }
+  }
+
+  &__media {
+    
+    &--c {
+      @include col(9);
+      @include offset(7);
+      
+      position: relative;
+      z-index: 1;
+      padding-right: 0;
+      margin-top: -100px;
+
+      @include tablet {
+        @include col(13);
+        @include offset(4);
+
+        margin-top: -60px;
+      }
+      
+      @include mobile {
+        @include col(20);
+        @include offset(4);
+
+        margin-top: -40px;
+        order: 4;
+      }
+    }
+  }
+}
+

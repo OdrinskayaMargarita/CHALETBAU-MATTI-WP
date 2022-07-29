@@ -1,0 +1,89 @@
+.history-about {
+  position: relative;
+  padding-top: 264px;
+  background-color: $c-milk;
+  z-index: 1;
+
+  @include tablet {
+
+  }
+
+  @include mobile {
+    padding-top: 200px;
+  }
+
+  &__cont {
+    position: relative;
+    z-index: 1;
+
+    @include tablet {
+      margin-bottom: 200px;
+    }
+
+    @include mobile {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__grid {
+    @include row();
+  }
+
+  &__heading {
+    @include col(20);
+    @include offset(4);
+
+    font-family: $f-eaves-sans;
+
+    @include tablet {
+      @include col(20);
+      @include offset(2);
+    }
+
+    @include mobile {
+      // @include col(22);
+      // @include offset(2);
+      @include col(24);
+      @include offset(0);
+
+    }
+  }
+
+  &__pretitle {
+    margin-bottom: 20px;
+    color: $c-gray-text-new;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: (20/18);
+    letter-spacing: (2/18)+em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @extend %title;
+
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    @include col(7);
+    @include offset(9);
+
+    @include tablet {
+      @include col(20);
+      @include offset(2);
+    }
+
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+    }
+
+    font-size: 16px;
+    line-height: (24/16);
+  }
+
+  &__mountain {
+    margin-top: -115px;
+  }
+}

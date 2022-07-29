@@ -1,0 +1,18 @@
+---
+title: Manifesto page
+description: Manifesto page description
+pageName: manifestoPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  <main class="manifesto__main main">
+    {% include "pages/manifesto/hero-title.twig" %}
+    {% include "pages/manifesto/text-place.twig" %}
+    {% include "pages/manifesto/teaser.twig" %}
+    {% include "pages/manifesto/quote-auto.twig" %}
+    {% include "pages/manifesto/page-links.twig" %}
+
+  </main>
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

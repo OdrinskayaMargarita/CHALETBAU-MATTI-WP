@@ -1,0 +1,152 @@
+$rem-base: 18px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base) {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) {
+    $value: 0;
+  }
+  // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+  @if $max == 1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
+@mixin target-ie11 {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin target-edge {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin target-safari {
+  @media not all and (min-resolution: .001dpcm) {
+    @content;
+  }
+}
+
+@mixin selection {
+  & ::selection {
+    @content;
+  }
+  & ::-moz-selection {
+    @content;
+  }
+}
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+     object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+       object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+
+@mixin tablet {
+  @media (max-width: $w-tablet-up) {
+    @content;
+  }
+}
+
+@mixin tablet-v {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+
+@mixin mobile {
+  @media (max-width: $w-mobile-up) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: $w-small-mobile-up) {
+    @content;
+  }
+}
+
+
+
+
+// boostrap scss shorthand
+// examples: https://gist.github.com/anschaef/d7552885c0e1f127cf8830d3bbf6e4b1
+
+@mixin cont() {
+  @include make-container();
+  @include make-container-max-widths();
+}
+@mixin cont-full() {
+  @include make-container();
+}
+@mixin row() {
+  @include make-row();
+}
+@mixin col($n, $total: "") {
+  @include make-col-ready();
+  @include make-col($n);
+
+  @if $total != "" {
+    @include make-col($n, $total);
+  }
+}
+@mixin offset($n, $total: "") {
+  @include make-col-offset($n);
+
+  @if $total != "" {
+    @include make-col-offset($n, $total);
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

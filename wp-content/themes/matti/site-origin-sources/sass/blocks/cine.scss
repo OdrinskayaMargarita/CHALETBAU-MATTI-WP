@@ -1,0 +1,37 @@
+.cine {
+  position: relative;
+  user-select: none;
+
+  &__video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $c-white;
+    font-family: $f-title;
+    font-size: 40px;
+    line-height: (42/40);
+    color: $c-milk;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet {
+      // font-size: 32px;
+      font-size: 28px;
+    }
+    
+    @include mobile {
+      font-size: 40px;
+      line-height: (42/40);
+    }
+    @media(max-width: 380px) {
+      font-size: 32px;
+    }
+  }
+}

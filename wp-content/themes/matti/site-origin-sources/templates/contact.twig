@@ -1,0 +1,15 @@
+---
+title: Contact
+description: Contact description
+pageName: contactPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  {% include "pages/contact/contact-greeting.twig" %}
+  {% include "pages/contact/contact.twig" %}
+  {% include "pages/contact/feedback.twig" %}
+  
+  {% include "blocks/_footer.twig" %}
+{% endblock %}
+

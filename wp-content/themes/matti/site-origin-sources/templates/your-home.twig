@@ -1,0 +1,29 @@
+---
+title: Your home
+description: Your home description
+pageName: yourHome
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  <main class="your-home__main">
+    {% include "pages/your-home/your-home-greeting.twig" %}
+    {% include "pages/your-home/pagenav-wrapper.twig" %}
+    {% include "pages/your-home/services.twig" %}
+    {% include "pages/your-home/image-quote.twig" %}
+    {% include "pages/your-home/provider.twig" %}
+    {% include "pages/your-home/video-text.twig" %}
+    {% include "pages/your-home/dual.twig" %}
+    {% include "pages/your-home/inserted-images.twig" %}
+    {% include "pages/your-home/text-section.twig" %}
+    {% include "pages/your-home/full-image-slider.twig" %}
+    {% include "pages/your-home/center-quote.twig" %}
+    {% include "pages/your-home/innovations.twig" %}
+    {% include "pages/your-home/multiple.twig" %}
+    {% include "pages/your-home/collaboration.twig" %}
+    {% include "pages/your-home/teaser.twig" %}
+  </main>
+  
+  {% include "blocks/popup-video--simple.twig" %}
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

@@ -1,0 +1,117 @@
+.image-quote{
+    padding-top: 150px;
+    padding-bottom: 210px;
+
+    @include tablet {
+        padding-top: 30px;
+    }
+    @media(max-width: $w-mobile-up + 1) {
+        padding-top: 80px;
+        padding-bottom: 130px;
+        overflow: hidden;
+    }
+    &__row{
+        @include row();
+    }
+    &__left-col{
+        @include col(11);
+
+        @include tablet {
+            @include col(18);
+            @include offset(3);
+        }
+
+        @include mobile {
+            @include col(24);
+            @include offset(0);
+        }
+    }
+    &__right-col{
+        @include col(8);
+        @include offset(4);
+
+        @include tablet {
+            @include col(16);
+            @include offset(4);
+        }
+        @include mobile {
+            @include col(24);
+            @include offset(0);
+        }
+    }
+    &__picture-container{
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 0;
+        padding-top: 66.8%;
+    }
+    &__picture,
+    &__video{
+        @extend .cover;
+    }
+    &__text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $f-eaves-sans;
+        font-size: 40px;
+        line-height: (42/40);
+        color: $c-beige;
+        text-transform: uppercase;
+    }
+    &__blockquote{
+        margin-top: 40px;
+        @media(max-width: $w-mobile-up + 1) {
+            margin-top: 70px;
+        }
+    }
+
+    .q__author {
+        @include tablet {
+            padding-left: 28px;
+        }
+    }
+}
+
+.blockquote{
+    position: relative;
+    font-family: $f-eaves-sans;
+    font-size: 46px;
+    line-height: (52/46);
+    color: $c-dark;
+    @media(max-width: $w-mobile-up + 1) {
+        margin-left: 30px;
+        font-size: 36px;
+        line-height: (42/36);
+    }
+    &::before, &::after{
+        content: '';
+        display: inline-block;
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &::before{
+        position: absolute;
+        top: 0;
+        left: -30px;
+        background-image: url('../img/i-quote-open.svg');
+    }
+    &::after{
+        margin-left: -5px;
+        background-image: url('../img/i-quote-close.svg');
+    }
+}

@@ -1,0 +1,184 @@
+.mountain {
+  width: 100%;
+
+  @include tablet {
+    
+  }
+  
+  @include mobile {
+    position: relative;
+  }
+
+  &__figure {
+    width: 100%;
+    position: relative;
+    user-select: none;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 66%;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(#FFFCF7, 1) 0%, rgba(#FFFCF7, .28) 100%);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 34%;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255,252,247,0.28) 0%, rgba(36,36,36,1) 100%);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      height: 100vh;
+      object-fit: cover;
+      object-position: 55% center;
+    }
+  }
+
+  &__graph {
+    position: absolute;
+    bottom: 20vw;
+    left: 0;
+    width: 100%;
+    user-select: none;
+
+    @include tablet {
+      bottom: 35vw;
+    }
+    
+    @include mobile {
+      bottom: unset;
+      top: 0;
+    }
+  }
+
+  &__graph-item {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    &--over {
+      @extend %centered;
+
+      width: 100%;
+      clip-path: polygon(0 0, 0 100%, 70% 100%, 0 100%);
+    }
+  }
+
+  &__main {
+    position: absolute;
+    top: 58%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+
+    @include tablet {
+      top: 65%;
+    }
+    
+    @include mobile {
+      top: 30vh;
+    }
+  }
+
+  &__main-cont {
+    @include mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__main-grid {
+    @include row();
+    width: 100%;
+  }
+
+  &__main-inner {
+    @include col(21);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include tablet {
+      @include col(24);
+    }
+    
+    @include mobile {
+      @include col(24);
+      
+      padding-right: 0;
+    }
+  }
+  &__main-text {
+    min-width: 310px;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      min-width: 205px;
+    }
+  }
+  &__text {
+    user-select: none;
+  }
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: (18/12);
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      margin-bottom: -15px;
+    }
+  }
+
+  &__counter {
+    font-size: 120px;
+    line-height: (124/120);
+    letter-spacing: (-7/120)+em;
+    font-family: $f-eaves-modern;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      font-size: 80px;
+      line-height: (124/80);
+      letter-spacing: (-4.67/80)+em;
+    }
+  }
+
+  &__counter-value {
+    
+  }
+}

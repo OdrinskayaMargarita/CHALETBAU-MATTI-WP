@@ -1,0 +1,108 @@
+.page-nav {
+  $pn: &;
+  position: absolute;
+  top: 23px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+
+  @include tablet {
+    
+  }
+  
+  @include mobile {
+    display: none;
+  }
+
+  &__btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    color: $c-orange;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__icon-open {
+    @extend %centered;
+
+    transition: opacity .3s, transform .3s;
+    transition: opacity .3s;
+    transform: translate(-50%, -50%) scale(1);
+
+    #{$pn}--expanded & {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  }
+
+  &__icon-close {
+    @extend %centered;
+
+    transition: opacity .3s, transform .3s;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    #{$pn}--expanded & {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding-left: 24px;
+
+    transition: opacity .3s, transform .3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-15px);
+
+    #{$pn}--expanded & {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: (24/18);
+    color: $c-grey--nav;
+    font-weight: 300;
+    transition: color .3s;
+
+    &:hover {
+      color: $c-orange;
+      font-weight: 500;
+    }
+
+    &:after {
+      content: '/';
+      display: inline-block;
+      margin: 0 .5em;
+      font-weight: 300;
+      color: $c-grey--nav;
+    }
+
+    &:last-of-type:after {
+      display: none;
+    }
+  }
+
+  &__link {
+    
+  }
+
+
+  &--expanded {
+    
+  }
+}

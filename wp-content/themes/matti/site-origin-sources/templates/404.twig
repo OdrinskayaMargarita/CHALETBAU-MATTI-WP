@@ -1,0 +1,13 @@
+---
+title: 404 page
+description: 404 page description
+pageName: 404Page
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  <main class="error-page__main">
+    {% include "pages/404/error-block.twig" %}
+  </main>
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

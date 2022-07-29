@@ -1,0 +1,18 @@
+---
+title: Jobs page
+description: Jobs page description
+pageName: jobsPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  <main class="jobs__main main">
+    {% include "pages/jobs/hero-title.twig" %}
+    {% include "pages/jobs/single-quote.twig" %}
+    {% include "pages/jobs/jobs-block.twig" %}
+    {% include "pages/jobs/culture.twig" %}
+    {% include "pages/jobs/page-links.twig" %}
+
+  </main>
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

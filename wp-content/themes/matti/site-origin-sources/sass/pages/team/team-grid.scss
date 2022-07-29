@@ -1,0 +1,122 @@
+.team-grid{
+    padding-top: 110px;
+    padding-bottom: 200px;
+    @media (max-width: $w-mobile-up + 1) {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    } 
+    &__cont{
+        @media (max-width: 640px) {
+            padding-left: 56px;
+            padding-right: 56px;
+        }
+        @media (max-width: 375px) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    } 
+    &__row{
+        @include row();
+        justify-content: center;
+        margin-left: -40px;
+        margin-right: -40px;
+        @media (max-width: 1260px) {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        @media (max-width: 640px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.team{
+    &__item{
+        width: calc(33.333% - 80px);
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 86px;
+        @media (max-width: 1260px) {
+            width: calc(33.333% - 40px);
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        @media (max-width: $w-mobile-up + 1) {
+            width: calc(50% - 40px);
+            margin-bottom: 60px;
+        }
+        @media (max-width: 640px) {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &:hover{
+            .team__info{
+                opacity: 1;
+                visibility: visible;
+                transform: translate(-20px, -20px);
+            }
+            .team__name{
+                color: $c-orange;
+            }
+        }
+    }
+    &__card{
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+    &__info{
+        position: absolute;
+        top: 0;
+        left: 0;    
+        right: 0;
+        bottom: 0;
+        padding: 80px 40px;
+        background-color: $c-dark;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease-in-out,
+                    visibility .3s ease-in-out,
+                    transform .3s ease-in-out;
+    }
+    &__role{
+        display: block;
+        margin-bottom: 20px;
+        font-family: $f-futura;
+        font-size: 18px;
+        line-height: (23/18);
+        letter-spacing: (2/18) + em;
+        color: #fff;
+    }
+    &__text{
+        font-family: $f-futura;
+        font-size: 16px;
+        line-height: (24/16);
+        color: #fff;
+        p{
+            margin-bottom: 28px;
+        }
+
+
+    }
+    &__image-container{
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+    }
+    &__image{
+        @extend .cover;
+    }
+    &__name{
+        display: block;
+        margin-top: 18px;
+        font-family: $f-eaves-sans;
+        font-size: 34px;
+        line-height: (42/34);
+        color: $c-black;
+        text-align: center;
+        transition: color .3s ease-in-out ;
+    }
+}

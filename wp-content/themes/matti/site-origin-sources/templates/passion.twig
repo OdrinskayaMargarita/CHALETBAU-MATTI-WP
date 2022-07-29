@@ -1,0 +1,28 @@
+---
+title: Passion
+description: Passion description
+pageName: passionPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+
+  {% include "pages/passion/passion-greeting.twig" %}
+  {% include "pages/passion/business.twig" %}
+  {% include "pages/passion/pagenav-wrapper.twig" %}
+  {% include "pages/passion/design.twig" %}
+  {% include "pages/passion/review.twig" %}
+  {% include "pages/passion/presentation.twig" %}
+  {% include "pages/passion/text-c.twig" %}
+  {% include "pages/passion/nature.twig" %}
+  {% include "pages/passion/poster.twig" %}
+  {% include "pages/passion/traditions.twig" %}
+  {% include "pages/passion/workshop.twig" %}
+  {# {% include "pages/passion/business.twig" %} #}
+  {% include "pages/passion/carousel.twig" %}
+  
+  {% include "pages/passion/teaser.twig" %}
+
+  {% include "blocks/popup-video--simple.twig" %}
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

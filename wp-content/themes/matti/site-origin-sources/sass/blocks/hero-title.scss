@@ -1,0 +1,58 @@
+.main{
+    background-color: $c-beige;
+}
+
+.hero-title{
+    padding-top: 340px;
+    padding-bottom: 60px;
+    @media (max-width: $w-mobile-up + 1) {
+        padding-top: 290px;
+    }
+
+    .btn {
+        @include tablet {
+          
+        }
+        
+        @include mobile {
+          font-weight: 600;
+        }
+    }
+}
+
+.hero{
+    &__content{
+        max-width: 565px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    &__overline{
+        display: block;
+        font-family: $f-eaves-sans;
+        font-size: 18px;
+        line-height: (20/18);
+        letter-spacing: (2/18) + em;
+        color: $c-black;
+        text-transform: uppercase;
+    }
+
+    &__title{
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-family: $f-eaves-sans;
+        font-size: 64px;
+        line-height: (70/64);
+        color: $c-black;
+
+        @include tablet {
+            font-size: 46px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+}

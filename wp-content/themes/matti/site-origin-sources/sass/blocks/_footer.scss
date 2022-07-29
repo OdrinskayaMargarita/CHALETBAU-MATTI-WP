@@ -1,0 +1,60 @@
+.footer {
+  position: relative;
+  padding-top: 54px;
+  padding-bottom: 77px;
+
+  font-weight: 300;
+  font-size: 12px;
+  background-color: $c-beige;
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 43px;
+    right: 43px;
+    height: 1px;
+    background-color: $c-grey;
+
+    @include tablet {
+      left: 36px;
+      right: 36px;
+    }
+    
+    @include mobile {
+      
+    }
+  }
+
+  @include tablet {
+    
+  }
+  
+  @include mobile {
+    padding-top: 26px;
+    padding-bottom: 130px;
+  }
+
+  &__cont {
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+}

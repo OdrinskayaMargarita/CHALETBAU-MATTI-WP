@@ -1,0 +1,32 @@
+.text-section {
+    padding-top: 120px;
+    padding-bottom: 160px;
+    @media (max-width: $w-mobile-up + 1) {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+    &__row {
+        @include row();
+    }
+    &__col {
+        @include col(12);
+
+        @include tablet {
+            @include col(20);
+            @include offset(2);
+        }
+
+        @include mobile {
+            @include col(24);
+            @include offset(0);
+        }
+    }
+    &__subtitle {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    &__title {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}

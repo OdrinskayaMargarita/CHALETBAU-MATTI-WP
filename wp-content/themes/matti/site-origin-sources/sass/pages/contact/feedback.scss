@@ -1,0 +1,83 @@
+.feedback {
+  padding-top: 80px;
+  padding-bottom: 225px;
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 130px;
+  }
+
+  &__cont {
+  }
+
+  &__grid {
+  }
+
+  &__title {
+    @include col(20);
+    @include offset(2);
+    @extend %title;
+
+    margin-bottom: 40px;
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+    }
+  }
+
+  &__main {
+    @include col(16);
+    @include offset(4);
+
+    margin-bottom: 50px;
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      @include col(22);
+      @include offset(1);
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    max-width: 325px;
+  }
+
+  &__form {
+    @include col(16);
+    @include offset(4);
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      @include col(22);
+      @include offset(1);
+    }
+  }
+
+  .form__box {
+    z-index: 100;
+  }
+
+  .recaptcha {
+    padding: 0 15px;
+  }
+
+}

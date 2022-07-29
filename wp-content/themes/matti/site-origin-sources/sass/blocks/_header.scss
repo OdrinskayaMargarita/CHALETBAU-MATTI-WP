@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 28px 67px 0;
+  pointer-events: none;
+  color: #fff;
+  z-index: 300;
+
+  @include tablet {
+    
+  }
+  
+  @include mobile {
+    padding: 63px 15px 0;
+
+    [data-page-name="homePage"] & {
+      pointer-events: none;
+    }
+  }
+  @media (max-width: 375px) {
+    padding-top: 24px;
+  }
+  @include small {
+    
+  }
+
+  &__cont {
+  }
+
+  &__grid {
+    @include row();
+  }
+
+  &__col {
+    @include col(8);
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      @include col(24);
+    }
+
+    &--l {
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        display: none;
+      }
+    }
+    &--r {
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__logo-link {
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    pointer-events: all;
+    text-align: center;
+    transition: opacity .3s, transform .3s;
+    user-select: none;
+
+    .is-menu-opened & {
+      transform: translateY(-50%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @include mobile {
+      [data-page-name="homePage"] & {
+        pointer-events: none;
+      }
+    }
+
+    &--disabled {
+      opacity: 0%;
+      pointer-events: none;
+    }
+  }
+
+  &__logo {
+    display: none;
+    opacity: 0;
+
+    @include mobile {
+      max-width: 250px;
+    }
+
+    [data-page-name="homePage"] & {
+      display: block;
+    }
+
+    &--s {
+      position: relative;
+      display: block;
+      opacity: 0;
+      z-index: 1;
+
+      [data-page-name="homePage"] & {
+        display: none;
+      }
+    }
+
+    &--alt {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      z-index: 2;
+    }
+  }
+
+  &__burger-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 24px;
+  }
+}

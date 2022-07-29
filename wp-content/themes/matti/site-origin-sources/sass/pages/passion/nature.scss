@@ -1,0 +1,215 @@
+.nature {
+  padding: 90px 0 100px;
+
+  @include tablet {
+    padding: 40px 0;
+  }
+  
+  @include mobile {
+    
+  }
+  
+  &__cont {
+  }
+
+  &__row {
+    @include row();
+  }
+
+  &__fig {
+
+    &--l {
+      @include col(11);
+
+      padding-right: 0;
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        @include col(10);
+
+        margin-left: -20px;
+      }
+
+      .img-scroll {
+        @include tablet {
+          
+        }
+        
+        @include mobile {
+          width: calc(100% + 66px);
+          margin-left: -16px;
+
+        }
+      }
+      .img-scroll__el-holder {
+        @include tablet {
+          
+        }
+        
+        @include mobile {
+          height: 53.53vh;
+        }
+      }
+    }
+    &--r {
+      @include col(13);
+      @include offset(2);
+
+      padding-left: 0;
+      &figure {
+        padding-left: 0;
+      }
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        // @include col(22);
+        // @include offset(1);
+        @include col(24);
+        @include offset(0);
+        
+
+        margin-bottom: 35px;
+      }
+    }
+    &--small {
+      @include col(6);
+      @include offset(5);
+
+      @include tablet {
+        @include col(9);
+        @include offset(2);
+
+        margin-top: 20px;
+        padding-right: 0;
+      }
+      
+      @include mobile {
+        @include col(11);
+        @include offset(0);
+        
+        padding-right: 0;
+      }
+
+      padding-right: 0;
+      &figure {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__content {
+
+    &--c {
+      @include col(10);
+      @include offset(3);
+
+      padding-top: 100px;
+
+      @include tablet {
+        margin-bottom: 50px;
+        padding-top: 50px;
+      }
+      
+      @include mobile {
+        @include col(15);
+        @include offset(0);
+
+
+        position: relative;
+        margin-bottom: 0;
+        padding-top: 80px;
+        padding-right: 0;
+        z-index: 1;
+      }
+      div.nature__p {
+        @include mobile {
+          padding-left: 55px;
+        }
+        @include small {
+          padding-left: 30px;
+        }
+      }
+    }
+    &--l {
+      @include col(9);
+
+      padding-top: 78px;
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        // @include col(22);
+        // @include offset(1);
+        @include col(24);
+        @include offset(0);
+        
+      }
+    }
+
+    .nature__p {
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        max-width: 265px;
+        margin-bottom: 40px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__pretitle {
+    @extend %pretitle--grey;
+
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    position: relative;
+    @extend %title;
+
+    margin-bottom: 30px;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      font-size: 30px;
+      line-height: (36/30);
+    }
+  }
+  &__title-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  &__p {
+    @extend %text;
+
+    max-width: 290px;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      padding-left: 55px;
+      padding-right: 10px;
+    }
+  }
+}

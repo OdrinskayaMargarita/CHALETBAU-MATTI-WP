@@ -1,0 +1,20 @@
+//include third-party fonts
+
+@mixin font-face($font-name, $file-name, $font-weight, $font-style) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url("../fonts/"+ $file-name + ".woff2") format("woff2"),
+    url("../fonts/"+ $file-name + ".woff") format("woff");
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+
+// https://use.typekit.net/jsz8esp.css
+.tk-futura-pt { font-family: "futura-pt",sans-serif; }
+.tk-futura-pt-condensed { font-family: "futura-pt-condensed",sans-serif; }
+.tk-mr-eaves-modern { font-family: "mr-eaves-modern",sans-serif; }
+.tk-mr-eaves-sans { font-family: "mr-eaves-sans",sans-serif; }
+.tk-futura-pt-bold { font-family: "futura-pt-bold",sans-serif; }

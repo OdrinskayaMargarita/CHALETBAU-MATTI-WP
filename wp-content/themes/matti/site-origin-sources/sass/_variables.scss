@@ -1,0 +1,35 @@
+// grid: 24 columns with 10px gap
+$grid-columns:      24;
+$grid-gutter-width: 10px;
+
+// media query related
+$w-tablet-up: 1024px; // tablet max width
+$w-mobile-up: 767px; // mobile max width
+$w-small-mobile-up: 349px; // small mobile max width
+
+
+//fonts
+$f-futura: 'futura-pt', arial, sans-serif;
+$f-futura-condensed: 'futura-pt-condensed', arial, sans-serif;
+$f-futura-bold: 'futura-pt-bold', arial, sans-serif;
+$f-eaves-modern: 'mr-eaves-modern', arial, sans-serif;
+$f-eaves-sans: 'mr-eaves-sans', arial, sans-serif;
+
+$f-main: $f-futura;
+$f-title: $f-eaves-sans;
+
+//colors
+$c-black: #191919;
+$c-dark: #242424;
+$c-grey: #ced0ce;
+$c-grey--nav: #636363;
+$c-grey--inactive: #d2d2d2;
+$c-grey--border: #e6e8e6;
+$c-white: #fff;
+$c-milk: #fffcf7;
+$c-orange: #e0773c;
+$c-beige: $c-milk;
+$c-gray-text: #ced0ce;
+$c-gray-text-new: #adadad;
+
+$c-accent: $c-orange;

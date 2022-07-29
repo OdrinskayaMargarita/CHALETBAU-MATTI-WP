@@ -1,0 +1,56 @@
+.review {
+  padding: 100px 0;
+
+  @include tablet {
+    padding: 40px 0;
+  }
+  
+  @include mobile {
+    padding: 50px 0 30px;
+  }
+
+  &__cont {
+  }
+
+  &__grid {
+    @include row();
+  }
+
+  &__media {
+    @include col(11);
+    @include offset(2);
+
+    @include tablet {
+      @include col(10);
+      @include offset(0);
+    }
+    
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+
+      margin-bottom: 73px;
+    }
+
+    .media__el {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    @include col(8);
+    @include offset(2);
+
+    @include tablet {
+      @include col(13);
+      @include offset(1);
+    }
+    
+    @include mobile {
+      @include col(20);
+      @include offset(2);
+    }
+  }
+}

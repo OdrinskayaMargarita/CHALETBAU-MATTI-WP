@@ -1,0 +1,19 @@
+---
+title: History
+description: History description
+pageName: historyPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  {% include "pages/history/history-greeting.twig" %}
+  {% include "pages/history/history-about.twig" %}
+  {% include "pages/history/timeline.twig" %}
+  {% include "pages/history/media.twig" %}
+  {% include "pages/history/q.twig" %}
+  {% include "pages/history/dual.twig" %}
+  {% include "pages/history/teaser.twig" %}
+
+  {% include "blocks/popup-video--simple.twig" %}
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

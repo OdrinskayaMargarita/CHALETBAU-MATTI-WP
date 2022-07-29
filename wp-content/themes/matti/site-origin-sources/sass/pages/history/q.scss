@@ -1,0 +1,147 @@
+.q {
+  padding-bottom: 100px;
+
+  @include tablet {
+
+  }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__cont {
+  }
+
+  &__grid {
+    @include row();
+  }
+
+  &__main {
+    @include col(16);
+    @include offset(6);
+
+    @include tablet {
+      @include col(16);
+      @include offset(4);
+    }
+
+    @include mobile {
+      @include col(20);
+      @include offset(3);
+
+      padding-right: 30px;
+    }
+  }
+
+  &__quote {
+    display: inline-block;
+    position: relative;
+    font-family: $f-eaves-sans;
+    font-size: 46px;
+    line-height: 0;
+    margin-bottom: 34px;
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      margin-bottom: 18px;
+      font-size: 36px;
+      line-height: 1.02;
+    }
+    @supports (-webkit-touch-callout: none) {
+      line-height: 1.15;
+    }
+
+
+    .word {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.2;
+    }
+    .char {
+      display: inline-block;
+      transform: translateY(100%);
+    }
+  }
+  &__quote-deco {
+    position: absolute;
+    user-select: none;
+
+    &--l {
+      top: 7px;
+      left: -30px;
+
+      transform: translateX(-15px);
+      opacity: 0;
+
+      @include tablet {
+        top: 0;
+      }
+
+      @include mobile {
+
+      }
+    }
+    &--inline {
+      display: inline-block;
+      position: relative;
+      top: -19px;
+      left: -3px;
+    }
+
+    &--r {
+      display: inline-block;
+      position: static;
+      transform: translateX(15px) translateY(-0.6em) rotate(180deg) ;
+      opacity: 0;
+
+      @include tablet {
+
+      }
+
+      @include mobile {
+        position: relative;
+        left: 28px;
+        transform: translateX(15px) translateY(-0.45em) rotate(180deg);
+        margin-left: -28px;
+      }
+    }
+  }
+
+  &__author {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: (23/18);
+    letter-spacing: (2/18)+em;
+
+    opacity: 0;
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      font-size: 15px;
+      line-height: (17/15);
+      letter-spacing: (1.67/15)+em;
+      // color: $c-grey;
+    }
+
+    br {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+
+      @include mobile {
+
+      }
+    }
+  }
+}

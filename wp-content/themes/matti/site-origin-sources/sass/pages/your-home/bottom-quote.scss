@@ -1,0 +1,111 @@
+.bottom-quote{
+    margin-bottom: 150px;
+    padding-top: 228px;
+    padding-bottom: 245px;
+    @media (max-width: $w-mobile-up + 1) {
+        padding-top: 120px;
+        padding-bottom: 97px;
+        margin-bottom: 0;
+    }
+    &__container{
+        position: relative;
+        display: flex;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+    &__image-container{
+        position: absolute;
+        top: 60px;
+        z-index: 3;
+        overflow: hidden;
+        width: 71.6%;
+        height: 0;
+        margin-left: -123px;
+        padding-top: 47.94%;
+        @include mobile {
+            top: 145px;
+            width: 72.46vw;
+            margin-left: -36px;
+            padding-top: 61%;
+        }
+        @include mobile {
+            position: static;
+        }
+    }
+    &__image, 
+    &__video{
+        @extend .cover;
+    }
+    &__text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        font-family: $f-eaves-sans;
+        font-size: 40px;
+        line-height: (42/40);
+        color: $c-beige;
+        text-transform: uppercase;
+        @media (max-width: 380px) {
+            font-size: 30px;
+        }
+    }
+    &__blockquote {
+        position: relative;
+
+        @include mobile {
+            margin-top: -40px;
+        }
+    }
+    &__blockquote, 
+    &__image-blockquote{
+        width: 27.23%;
+        margin-left: auto;
+        margin-right: 10px;
+        color: #fff;
+
+        @include mobile {
+            width: 240px;
+            margin-left: 300px;
+        }
+        @include mobile {
+            margin-left: 30px;
+            width: 270px;
+            font-size: 28px;
+        }
+        @media (max-width: 360px) {
+            margin-left: 20px;
+        }
+    }
+    &__image-blockquote{
+        display: none;
+
+        @include mobile {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-40px);
+            left: 36px;
+            z-index: 5;
+            display: block;
+            color: #000;
+        }
+        &:before {
+            background-image: url('../img/i-quote-open--dark.svg');
+        }
+    }
+
+    .q__author {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color: $c-white;
+    }
+}

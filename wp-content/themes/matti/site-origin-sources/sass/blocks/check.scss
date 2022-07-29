@@ -1,0 +1,69 @@
+.check {
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+
+  &__box {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #e6e8e6;
+    transition: background .3s, border .3s;
+    flex-shrink: 0;
+
+    .check--active & {
+      background-color: $c-orange;
+      border-color: $c-orange;
+    }
+    .check--focus & {
+      outline: 1px solid $c-orange;
+      outline-offset: 1px;
+    }
+    
+
+    &+& {
+      margin-left: 18px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 9px;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity .3s, scale .3s;
+    opacity: 0;
+
+    .check--active & {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &__label {
+    min-width: 100px;
+    margin-left: 14px;
+    font-size: 14px;
+    line-height: 1;
+    color: $c-grey--nav;
+  }
+
+  &--active {
+
+  }
+  
+  //CF7
+  .check__input_cf7 {
+    display: none;
+  }
+}

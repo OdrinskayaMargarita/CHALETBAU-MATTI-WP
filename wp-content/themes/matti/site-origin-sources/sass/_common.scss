@@ -1,0 +1,121 @@
+html, body {
+  color: $c-black;
+  background-color: $c-milk;
+  font-family: $f-main;
+  font-size: 16px;
+  line-height: (24/16);
+  height: 100%;
+}
+
+.cont {
+  width: 1120px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  @media(max-width: 1260px) {
+    width: 100%;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+.grid {
+  @include row();
+}
+
+
+.scroll-wrapper {
+  height: 100%;
+  overflow: auto;
+}
+
+.h2{
+  @extend %title;
+}
+
+.h3{
+  font-family: $f-eaves-sans;
+  font-size: 34px;
+  line-height: (42/34);
+  color: $c-black;
+}
+
+.subtitle{
+  display: block;
+  font-family: $f-eaves-sans;
+  font-size: 18px;
+  line-height: (20/18);
+  letter-spacing: (2/18)+em;
+  color: $c-gray-text-new;
+  text-transform: uppercase;
+}
+
+.text{
+  display: block;
+  font-family: $f-futura;
+  font-size: 22px;
+  line-height: (32/22);
+}
+
+.text--sm{
+  display: block;
+  font-family: $f-futura;
+  font-size: 16px;
+  line-height: (24/16);
+}
+
+.cover{
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: -100%;
+  bottom: -100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.contain{
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: -100%;
+  bottom: -100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+// scroll reveal
+[data-ae],
+[data-st] {
+  opacity: 0;
+}
+
+// custom scrollbar
+.page-wrapper {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.scrollbar-track-y,
+.scrollbar-thumb {
+  @include mobile {
+    width: 3px !important;
+  }
+}
+
+.scroll-content {
+  will-change: transform;
+}

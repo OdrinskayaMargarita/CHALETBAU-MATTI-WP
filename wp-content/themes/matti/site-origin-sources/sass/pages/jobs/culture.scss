@@ -1,0 +1,174 @@
+.culture{
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @media (max-width: $w-mobile-up + 1) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    &__overline{
+        display: block;
+        font-family: $f-futura;
+        font-size: 14px;
+        font-weight: 350;
+        line-height: (24/14);
+        letter-spacing: (2/14) + em;
+        text-align: center;
+        color: $c-grey--nav;
+        text-transform: uppercase;
+    }
+
+    &__amount{
+        // margin-top: 55px;
+        @include tablet {
+            @include col(20);
+            @include offset(2);
+        }
+        @include mobile {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__item{
+        position: relative;
+        &--left-side{
+            .culture__text-container{
+                margin-left: 64px;
+                @media(max-width: $w-tablet-up){
+                    margin-left: 0;
+                    text-align: right;
+                }
+            }
+            .culture__image-container{
+                left: 0;
+                right: auto;
+                @media(max-width: $w-mobile-up + 1){
+                    left: -36px;
+                }
+            }
+        }
+        &--center{
+            .culture__text-container{
+                margin-left: 290px;
+                @media(max-width: $w-tablet-up){
+                    margin-left: 0;
+                }
+            }
+            .culture__image-container{
+                left: auto;
+                right: 0;
+                @media(max-width: $w-mobile-up + 1){
+                    right: -36px;
+                }
+            } 
+        }
+        &--start{
+            .culture__text-container{
+                @media(max-width: $w-tablet-up){
+                    margin-right: 10px;
+                    text-align: right;
+                }
+            }
+            .culture__image-container{
+                @media(max-width: $w-mobile-up + 1){
+                    left: -36px;
+                }
+            }
+        }
+        &--right-side{
+            .culture__text-container{
+                margin-left: auto;
+                margin-right: 77px;
+                text-align: right;
+                @media(max-width: $w-tablet-up){
+                    margin-left: 0;
+                    text-align: left;
+                }
+            }
+            .culture__image-container{
+                left: 204px;
+                right: auto;
+                @media(max-width: $w-mobile-up + 1){
+                    left: auto;
+                    right: -36px;
+                }
+            }
+        }
+        &--center-image-left{
+            .culture__text-container{
+                margin-left: 290px;
+                @media(max-width: $w-tablet-up){
+                    margin-left: 0;
+                    text-align: right;
+                }
+            }
+            .culture__image-container{
+                left: 54px;
+                right: auto;
+                @media(max-width: $w-mobile-up + 1){
+                    left: -36px;
+                    right: auto;
+                }
+            }
+        }
+    }
+
+    &__text-container{
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    &__text{
+        font-family: $f-eaves-sans;
+        font-size: 86px;
+        font-weight: 400;
+        line-height: (62/86);
+        letter-spacing: (3/86) + em;
+        color: $c-dark;
+        text-transform: uppercase;
+        cursor: pointer;
+        @media(max-width: $w-tablet-up){
+            font-size: 72px;
+        }
+        @media(max-width: $w-mobile-up + 1){
+            font-size: 36px;
+            line-height: (38/36);
+        }
+    }
+
+    &__text-upper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        color: #fff;
+        transition: opacity .2s ease-in-out,
+                    visibility .2s ease-in-out;
+    }
+
+    &__image-container{
+        position: absolute;
+        top: calc(50% - 133px);
+        right: 0;
+        overflow: hidden;
+        width: 468px;
+        height: 266px;
+        z-index: 1;
+        transition: opacity .2s ease-in-out,
+                    visibility .2s ease-in-out;
+        @media(max-width: $w-mobile-up + 1){
+            top: calc(50% - 70px);
+            width: 244px;
+            height: 140px;
+        }
+    }
+
+    &__image{
+        @extend .cover;
+    }
+}

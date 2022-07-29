@@ -1,0 +1,12 @@
+.pagenav-wrapper {
+  position: relative;
+  height: 120px;
+
+  @include tablet {
+    height: 90px;
+  }
+  
+  @include mobile {
+    display: none;
+  }
+}

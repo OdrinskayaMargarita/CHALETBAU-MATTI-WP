@@ -1,0 +1,149 @@
+.popup-video {
+  --plyr-video-control-background-hover: transparent;
+  --plyr-range-track-height: 4px;
+  --plyr-range-fill-background: $c-white;
+  --plyr-range-thumb-background: transparent;
+  --plyr-range-thumb-shadow: none;
+  --plyr-video-progress-buffered-background: rgba(25,25,25, .55);
+  --plyr-progress-loading-background: rgba(25,25,25, .55);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 700;
+  background-color: #000;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: transform .5s, opacity .5s;
+  z-index: 400;
+
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+
+  &__lang {
+    position: absolute;
+    top: 53px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: 1;
+
+    @include mobile {
+      left: 24px;
+      top: 26px;
+    }
+
+    .home & {
+      z-index: 3;
+    }
+  }
+
+  &__lang-item {
+    font-size: 10px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-right: 8px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      &:after {
+        content: "";
+      }
+    }
+    
+    &:after {
+      content: "|";
+    }
+  }
+
+  &__lang-link {
+    position: relative;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding-right: 8px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      user-select: none;
+    }
+    
+    &--active {
+      color: $c-orange;
+      text-decoration: underline;
+    }
+  }
+
+  &__media {
+    height: 100%;
+  }
+
+  &__element {
+    object-fit: contain;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    z-index: 2;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      user-select: none;
+    }
+    
+    @include mobile {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  &__icon-close {
+    display: block;
+  }
+}
+
+
+.plyr {
+  height: 100%;
+}
+
+.plyr__progress {
+  cursor: pointer;
+}
+.plyr__controls {
+  padding-left: 43px !important;
+  padding-right: 43px !important;
+
+  @include mobile {
+    padding-left: 16px !important;
+    padding-right: 24px !important;
+  }
+}
+
+.plyr__control svg {
+  color: $c-orange;
+}

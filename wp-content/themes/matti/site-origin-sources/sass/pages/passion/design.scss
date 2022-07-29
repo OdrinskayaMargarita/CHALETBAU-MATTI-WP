@@ -1,0 +1,167 @@
+.design {
+  position: relative;
+  background-color: $c-dark;
+  color: $c-white;
+  padding: 90px 0;
+  z-index: 1;
+
+  @include tablet {
+    padding: 40px 0;
+  }
+  
+  @include mobile {
+    padding-top: 120px;
+    padding-bottom: 75px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 210px;
+    background-color: $c-milk;
+    z-index: -1;
+
+    @include tablet {
+      height: 120px;
+    }
+    
+    @include mobile {
+      height: 320px;
+    }
+  }
+
+  &__cont {
+    
+  }
+
+  &__grid {
+    @include row();
+  }
+
+  &__main {
+    @include col(13);
+
+    padding-top: 100px;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+      
+
+      padding-top: 0;
+    }
+  }
+
+  &__main-grid {
+    @include row();
+  }
+
+  &__pretitle {
+    @include col(24);
+    @extend %pretitle--grey;
+
+    margin-bottom: 26px;
+  }
+
+  &__title {
+    @extend %title--small;
+    @include col(9, 13);
+
+    margin-bottom: 30px;
+
+    @include tablet {
+      @include col(13, 13);
+    }
+    
+    @include mobile {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    @include col(6, 13);
+
+    margin-bottom: 97px;
+    padding-right: 0;
+
+    @include tablet {
+      @include col(13, 13);
+
+      margin-bottom: 50px;
+    }
+    
+    @include mobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__cine {
+    @include col(13, 17);
+    @include offset(4, 13)
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      @include col(24);
+      @include offset(0)
+
+      padding: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__figure {
+    @include col(10);
+    @include offset(1);
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      @include col(24);
+      @include offset(0);
+      
+    }
+  }
+
+  &__figure-img {
+    width: calc(100% + ((100vw - 1120px) / 2));
+    max-width: 600px;
+
+    @include tablet {
+      width: calc(100% + 35px);
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__fake-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 210px);
+    pointer-events: none;
+    z-index: -1;
+
+    @include tablet {
+      height: calc(100% - 120px);
+    }
+    
+    @include mobile {
+      height: calc(100% - 320px);
+    }
+
+  }
+}

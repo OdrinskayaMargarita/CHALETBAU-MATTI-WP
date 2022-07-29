@@ -1,0 +1,16 @@
+---
+title: Team page
+description: Team page description
+pageName: teamPage
+---
+
+{% extends 'layouts/_page-default.twig' %}
+{% block content %}
+  <main class="team__main main">
+    {% include "pages/team/hero-title.twig" %}
+    {% include "pages/team/team-grid.twig" %}
+    {% include "pages/team/page-links.twig" %}
+
+  </main>
+  {% include "blocks/_footer.twig" %}
+{% endblock %}

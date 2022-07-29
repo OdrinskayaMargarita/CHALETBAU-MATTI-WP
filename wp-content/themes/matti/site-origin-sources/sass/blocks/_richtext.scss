@@ -1,0 +1,74 @@
+.richtext {
+
+  &>* {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $f-title;
+    line-height: 1.17;
+    margin: 28px 0;
+
+    @include mobile {
+
+    }
+  }
+  
+  h1 {
+    @extend %title;
+  }
+  h2 {
+    @extend %title--small;
+  }
+  h3 {
+    font-size: 28px;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    font-size: 24px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  h5 {
+    font-size: 20px;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  h6 {
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+  
+  p {
+    margin: 28px 0;
+  }
+  strong, b {
+    font-weight: bold;
+  }
+  i, em {
+    font-style: italic;
+  }
+}

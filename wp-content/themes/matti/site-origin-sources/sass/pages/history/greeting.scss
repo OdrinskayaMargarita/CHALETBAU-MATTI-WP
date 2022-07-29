@@ -1,0 +1,350 @@
+.greeting {
+  $g: &;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+
+  overflow: hidden;
+
+  @include tablet {
+    min-height: unset;
+  }
+  
+  @include mobile {
+    display: block;
+    height: auto;
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      flex-direction: column;
+      height: auto;
+    }
+
+    &--full {
+      @extend .cont;
+    }
+  }
+  &__title-wrapper {
+    overflow: hidden;
+
+    @include mobile {
+      margin-top: calc(100vh - 240px);
+      margin-bottom: 290px;
+    }
+
+    #{$g}--alt & {
+
+      @include mobile {
+        margin-top: calc(50vh - 100px);
+      }
+    }
+
+    #{$g}--full & {
+
+      @include mobile {
+        margin-top: calc(100vh - 240px);
+        margin-bottom: 100px;
+      }
+    }
+    #{$g}--yh & {
+      @include mobile {
+        margin-bottom: 150px;
+      }
+      @media (max-width: 360px) {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--center {
+      text-align: center;
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        margin-top: 25vh;
+        margin-bottom: 150px;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    text-transform: uppercase;
+    font-family: $f-eaves-sans;
+    font-size: 120px;
+    font-weight: 300;
+    line-height: (124/120);
+    letter-spacing: (2/120)+em;
+    color: #000;
+    user-select: none;
+    transform: translateY(100%);
+
+    @include tablet {
+      font-size: 100px;
+    }
+    
+    @include mobile {
+      font-size: 65px;
+      line-height: (74/70);
+      max-width: 400px;
+    }
+    @media (max-width: 380px) {
+      font-size: 60px;
+    }
+    @media (max-width: 330px) {
+      font-size: 48px;
+    }
+    
+    #{$g}--alt & {
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        text-align: center;
+      }
+    }
+
+    #{$g}--full & {
+      
+    }
+  }
+  &__title-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $c-white;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 92px;
+    left: 60%;
+    width: 50%;
+    width: 336px;
+    font-size: 22px;
+    line-height: (32/22);
+    font-weight: 400;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      position: static;
+      width: 100%;
+      max-width: 230px;
+      margin-left: 36px;
+      font-size: 16px;
+      line-height: (24/16);
+      margin-right: auto;
+    }
+
+    &--wide {
+      width: 415px;
+      max-width: 100%;
+
+      @include mobile {
+
+      }
+    }
+    &--bottom {
+      bottom: 0;
+      left: 0;
+
+      @include tablet {
+        margin-left: 36px;
+      }
+      
+      @include mobile {
+        
+      }
+    }
+
+    #{$g}--alt & {
+      left: 0;
+      bottom: 200px;
+
+
+      @media (orientation: landscape) and (max-height: 800px) {
+        bottom: 92px;
+      }
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        max-width: 240px;
+        margin-top: (175*100vh/736);
+        margin-bottom: 60px;
+      }
+      @include small {
+        margin-top: 13vh;
+      }
+    }
+    #{$g}--yh & {
+      @include mobile {
+        margin-top: 0;
+      }
+    }
+
+    #{$g}--full & {
+      margin-left: 0;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    bottom: (100vw*60/1366);
+    left: 0;
+    width: (100%*496/1366);
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+
+    @media (min-width: 1650px) {
+      width: (100%*550/1366);
+    }
+
+    @include tablet {
+      width: 45%;
+      bottom: 26%;
+    }
+    
+    @include mobile {
+      left: unset;
+      right: 0;
+      top: 65vh;
+      width: 50%;
+      height: (280*100vw/414);
+    }
+
+    #{$g}--alt & {
+      left: unset;
+      right: 0;
+      width: (100%*480/1366);
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        top: 50vh;
+        width: (258*100%/414);
+        height: 90vw;
+      }
+    }
+    #{$g}--alt &--small {
+      width: (100%*400/1366);
+    }
+    #{$g}--yh & {
+      @include mobile {
+        top: 0;
+        left: 0;
+        right: unset;
+        width: (276*100%/414);
+        height: 75vw;
+      }
+    }
+    
+    &--half {
+      width: 50%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      left: unset;
+
+      @include tablet {
+        
+      }
+      
+      @include mobile {
+        width: 100%;
+        height: 82vh;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: (100%*1062/1366);
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      width: 100vw;
+      height: 90vh;
+    }
+
+    #{$g}--alt & {
+      right: unset;
+      left: 0;
+    }
+
+    #{$g}--yh & {
+      // top: 240px;
+    }
+
+    #{$g}--full & {
+      
+    }
+  }
+
+
+  // right aligned version
+  &--alt {
+
+  }
+  &--milk {
+
+    @include tablet {
+      
+    }
+    
+    @include mobile {
+      background-color: $c-milk;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+  &--yh {
+
+  }
+}
